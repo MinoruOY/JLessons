@@ -7,4 +7,13 @@ public class Bus extends Car {
 	public Bus(String carModel, Color carColor, int carYear, int carPrice, int carWeight) {
 		super(carModel, carColor, carYear, carPrice, carWeight);
 	}
+
+	@Override
+	public boolean readyService() {
+		if (carServise > 50000) {
+			return true;
+		} else {
+			return false;
+		}
+	}
 }

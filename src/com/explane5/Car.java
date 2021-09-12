@@ -1,6 +1,8 @@
 package com.explane5;
 
-public class Car {
+import com.explane6.Serviceable;
+
+public abstract class Car implements Serviceable {
 
 	String carModel;
 	Color carColor;
@@ -8,6 +10,7 @@ public class Car {
 	int carPrice;
 	int carWeight;
 	private int carDistance = 0;
+	protected int carServise = 0;
 
 	public Car(String carModel, Color carColor, int carYear, int carPrice, int carWeight) {
 		this.carModel = carModel;
@@ -19,9 +22,12 @@ public class Car {
 
 	public void addDistance(int additionalDistance) {
 		carDistance += additionalDistance;
+		carServise += additionalDistance;
 	}
 
-
+	public int getCarServise() {
+		return carServise;
+	}
 
 	public int getCarDistance() {
 		return carDistance;
@@ -60,6 +66,7 @@ public class Car {
 				", carPrice=" + carPrice +
 				", carWeight=" + carWeight +
 				", carDistance=" + carDistance +
+				", carServise=" + carServise +
 				'}';
 	}
 }
